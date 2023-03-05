@@ -21,7 +21,7 @@ class Film
     #[ORM\Column]
     private ?int $year = null;
 
-    #[ORM\OneToMany(mappedBy: 'film', targetEntity: Comment::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'film', targetEntity: Comment::class, orphanRemoval: true, cascade: ["persist"])]
     private Collection $comments;
 
     public function __construct()
